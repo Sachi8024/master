@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Conronovirus Tracker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+
+<body>
+    <dev class="container">
+        <h1>Coronvirus Tracker Application</h1>
+        <p>This is the list of total deaths of American peoples in February</p>
+
+        <h1>COVID DEATHS <span class="badge bg-secondary" th:text="${totalReportedDeaths}" b></span></h1>
+
+        <table class="table">
+            <tr>
+                <th>State</th>
+                <th>Country</th>
+                <th>Total Deaths</th>
+            </tr>
+            <tr th:each="locationstat : ${locationstat}">
+                <td th:text="${locationstat.state}"></td>
+                <td th:text="${locationstat.country}"></td>
+                <td th:text="${locationstat.totalDeaths}">0</td>
+            </tr>
+        </table>
+    </dev>
+</body>
+
+</html>
